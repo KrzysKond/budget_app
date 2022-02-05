@@ -1,8 +1,6 @@
 import 'package:budget_app/database/db.dart';
 import 'package:budget_app/models/account.dart';
-
 import 'package:budget_app/models/transactions.dart';
-import 'package:budget_app/screens/new_transaction.dart';
 import 'package:budget_app/screens/accounts.dart';
 import 'package:budget_app/screens/stats.dart';
 import 'package:flutter/material.dart';

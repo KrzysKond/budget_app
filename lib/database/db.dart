@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:budget_app/models/transactions.dart';
 import 'package:budget_app/models/account.dart';
-import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

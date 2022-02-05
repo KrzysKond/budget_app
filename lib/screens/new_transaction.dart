@@ -3,10 +3,8 @@ import 'package:budget_app/functions/date_picker.dart';
 import 'package:budget_app/models/account.dart';
 import 'package:budget_app/models/date.dart';
 import 'package:budget_app/models/transactions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class NewTransaction extends StatefulWidget {
@@ -262,11 +260,10 @@ class _NewTransactionState extends State<NewTransaction> {
                               borderRadius: BorderRadius.circular(20),
                             ))),
                         onPressed: () async {
-                          print(key);
                           if (_formKey.currentState!.validate() &&
-                              Provider.of<DateClass>(context, listen: false)
+                              Provider.of<DateClass>(context, listen: false )
                                       .date !=
-                                  null) {
+                                  null && key!=null) {
                             _formKey.currentState!.save();
 
                             final transaction = Transactions(

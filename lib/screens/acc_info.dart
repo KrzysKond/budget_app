@@ -97,21 +97,21 @@ class _AccInfoState extends State<AccInfo> {
             const SizedBox(height: 50),
             Text(
               'Balance:      ${acc.balance}${acc.currencySign}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 28,
               ),
             ),
             const SizedBox(height: 30),
             Text(
               'Currency:  ' + acc.currency,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 28,
               ),
             ),
             const SizedBox(height: 30),
             Text(
               acc.description!,
-              style: TextStyle(
+              style: const  TextStyle(
                 fontSize: 20,
               ),
             ),

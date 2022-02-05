@@ -1,4 +1,3 @@
-import 'package:budget_app/database/db.dart';
 import 'package:budget_app/models/currency.dart';
 import 'package:budget_app/models/date.dart';
 import 'package:budget_app/screens/acc_info.dart';
@@ -11,7 +10,7 @@ import 'package:budget_app/screens/trans_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+void main(){
   runApp(
     const MyApp()
   );
@@ -45,7 +44,6 @@ class MyApp extends StatelessWidget {
               fontSize: 22,
             ),
           ),
-          // fontFamily: 'Raleway',
         ),
         routes: {
           '/home': (context) => const Home(),

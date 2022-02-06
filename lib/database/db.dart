@@ -14,7 +14,9 @@ class AccountsDatabase {
   Future<Database> get database async {
     if (_database != null) {
       return _database!;
-    } else {}
+    } else {
+      Exception('Problem while initializing the database. [DB dart: 18]');
+    }
     _database = await _initDB('accounts.db');
     return _database!;
   }
@@ -53,10 +55,7 @@ class AccountsDatabase {
       ${TransactionFields.time} $textType
     )
     ''');
-
   }
-
-
 
   Future<Account> createAnAccount(Account account) async {
     final db = await instance.database;
@@ -64,29 +63,11 @@ class AccountsDatabase {
 
     return account.copy(id: id);
   }
-
-  // Future<Account> readAccount() async {
-  //   final db = await instance.database;
-    
-  //   final maps = await db.query(
-  //     tableAccounts,
-  //     where: '${AccountFields.id} = ?',
-     
-  //   );
-
-  //   if (maps.isNotEmpty) {
-  //     return Account.fromJson(maps.first);
-  //   } else {
-  //     throw Exception('Account not found');
-  //   }
-  // }
-
+  
   Future<List<Account>> readAllAccounts() async {
     final db = await instance.database;
     const orderBy = '${AccountFields.lastLog} DESC';
     final result = await db.query(tableAccounts, orderBy: orderBy);
-   
-    
 
     return result.map((json) => Account.fromJson(json)).toList();
   }

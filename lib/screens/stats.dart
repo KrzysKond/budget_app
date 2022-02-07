@@ -25,6 +25,7 @@ class _StatsState extends State<Stats> {
     accounts = await AccountsDatabase.instance.readAllAccounts();
     transactions = await AccountsDatabase.instance
         .readAllTransactions(accounts.isNotEmpty ? accounts[0]!.id! : 0);
+    if (transactions.isNotEmpty) {
     for (int i = transactions.length; i >= 0; i--) {
       if (i == 0) {
         amounts.add(accounts[0]!.balance);
@@ -41,7 +42,7 @@ class _StatsState extends State<Stats> {
     }
     setState(() => isLoading = false);
   }
-
+  }
   @override
   void initState() {
     refresh();
